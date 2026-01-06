@@ -1,0 +1,35 @@
+:root {
+    /* 🌙 Madrugada */
+    --gradient-00h: linear-gradient(to bottom, #010924, #0a1a40);
+    --gradient-01h: linear-gradient(to bottom, #020b28, #0c2048);
+    --gradient-02h: linear-gradient(to bottom, #030d2e, #0e2550);
+    --gradient-03h: linear-gradient(to bottom, #041033, #122b5a);
+    --gradient-04h: linear-gradient(to bottom, #06153a, #1a3666);
+
+    /* 🌅 Amanhecer */
+    --gradient-05h: linear-gradient(to bottom, #13264a, #ff9966);
+    --gradient-06h: linear-gradient(to bottom, #3b6aa0, #ffcc66);
+    --gradient-07h: linear-gradient(to bottom, #6fa8dc, #ffe680);
+    --gradient-08h: linear-gradient(to bottom, #87ceeb, #fff2b2);
+    --gradient-09h: linear-gradient(to bottom, #7ec8e3, #ffffff);
+
+    /* 🌞 Meio do dia */
+    --gradient-10h: linear-gradient(to bottom, #6fb5e7, #f4f8ff);
+    --gradient-11h: linear-gradient(to bottom, #5da9e9, #eaf2ff);
+    --gradient-12h: linear-gradient(to bottom, #4aa3eb, #dff0ff);
+    --gradient-13h: linear-gradient(to bottom, #4ea8ec, #d9eeff);
+    --gradient-14h: linear-gradient(to bottom, #5ab1f0, #d7f2ff);
+    --gradient-15h: linear-gradient(to bottom, #6bb8f4, #e0f6ff);
+
+    /* 🌇 Entardecer */
+    --gradient-16h: linear-gradient(to bottom, #74b2e8, #ffd480);
+    --gradient-17h: linear-gradient(to bottom, #6288b4, #ffb266);
+    --gradient-18h: linear-gradient(to bottom, #4a557f, #ff884d);
+    --gradient-19h: linear-gradient(to bottom, #2e355d, #cc6699);
+
+    /* 🌌 Noite */
+    --gradient-20h: linear-gradient(to bottom, #1c2242, #663399);
+    --gradient-21h: linear-gradient(to bottom, #131a33, #2e3a66);
+    --gradient-22h: linear-gradient(to bottom, #0d1226, #1e2c4d);
+    --gradient-23h: linear-gradient(to bottom, #080d1f, #162240);
+}
