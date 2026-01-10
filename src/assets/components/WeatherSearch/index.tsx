@@ -1,4 +1,4 @@
-import { LocateIcon, SearchIcon } from "lucide-react";
+import { LocateIcon, MoonIcon, SearchIcon } from "lucide-react";
 import { Button } from "../Button";
 import { Input } from "../Input";
 
@@ -12,6 +12,9 @@ export function WeatherSearch() {
                 </Button>
                 <Button>
                     <LocateIcon size={16} />
+                </Button>
+                <Button>
+                    <MoonIcon size={16} />
                 </Button>
             </div>
         </form>

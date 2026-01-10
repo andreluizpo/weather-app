@@ -1,5 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 body {
-    background-color: #1c2242;
+    background-image: var(--gradient-19h);
+    background-attachment: fixed;
+
+    font-family: "Inter", sans-serif;
 }
