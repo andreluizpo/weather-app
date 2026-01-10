@@ -4,7 +4,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 body {
-    background-image: var(--gradient-19h);
+    background-image: var(--gradient-12h);
     background-attachment: fixed;
 
     font-family: "Inter", sans-serif;
