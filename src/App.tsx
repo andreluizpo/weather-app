@@ -4,16 +4,19 @@ import { WeatherSearch } from "./assets/components/WeatherSearch";
 import { WeatherContent } from "./assets/components/WeatherContent";
 import { WeatherFooter } from "./assets/components/WeatherFooter";
 import { Footer } from "./assets/components/Footer";
+import { WeatherContextProvider } from "./contexts/WeatherContextProvider";
 
 export function App() {
     return (
-        <Container>
-            <WeatherContainer>
-                <WeatherSearch />
-                <WeatherContent />
-                <WeatherFooter>Atual. 03/01/2026, 11:33</WeatherFooter>
-            </WeatherContainer>
-            <Footer />
-        </Container>
+        <WeatherContextProvider>
+            <Container>
+                <WeatherContainer>
+                    <WeatherSearch />
+                    <WeatherContent />
+                    <WeatherFooter>Atual. 03/01/2026, 11:33</WeatherFooter>
+                </WeatherContainer>
+                <Footer />
+            </Container>
+        </WeatherContextProvider>
     );
 }
