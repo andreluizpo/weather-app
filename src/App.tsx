@@ -13,7 +13,7 @@ export function App() {
                 <WeatherContainer>
                     <WeatherSearch />
                     <WeatherContent />
-                    <WeatherFooter>Atual. 03/01/2026, 11:33</WeatherFooter>
+                    <WeatherFooter />
                 </WeatherContainer>
                 <Footer />
             </Container>

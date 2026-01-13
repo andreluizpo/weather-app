@@ -1,17 +1,33 @@
-import { LocateIcon, MoonIcon, SearchIcon } from "lucide-react";
+import { LocateIcon, MoonIcon, SearchIcon, SunIcon } from "lucide-react";
 import { Button } from "../Button";
 import { Input } from "../Input";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useWeather } from "../../../contexts/useWeatherContext";
 
+type AvailableThemes = "dark" | "light";
+
 export function WeatherSearch() {
-    const { weather, setWeather } = useWeather();
+    const { fetchWeather, weather } = useWeather();
+    const [theme, setTheme] = useState<AvailableThemes>(() => {
+        const storageTheme = (localStorage.getItem("theme") as AvailableThemes) || "dark";
+        return storageTheme;
+    });
+
+    const nextThemeIcon = {
+        dark: <SunIcon size={16} />,
+        light: <MoonIcon size={16} />,
+    };
 
     const cityNameInput = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         console.log(weather);
     }, [weather]);
+
+    useEffect(() => {
+        document.documentElement.setAttribute("class", theme);
+        localStorage.setItem("theme", theme);
+    }, [theme]);
 
     function handleSearchCity(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -20,41 +36,31 @@ export function WeatherSearch() {
 
         const cityName = cityNameInput.current.value.trim();
 
-        getWeatherByCityName(cityName);
+        fetchWeather(cityName);
 
+        cityNameInput.current.value = "";
         console.log(cityName);
     }
 
-    const API_KEY = "d55963f9d3ad2d4960280fd7eadfa113";
-
-    async function getWeatherByCityName(cityName: string) {
-        const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric&lang=pt_br`
-        );
-
-        if (!response.ok) {
-            throw new Error("Cidade não encontrada");
-        }
-
-        const data = await response.json();
-
-        console.log(data);
-
-        setWeather(data);
+    function handleThemeChange() {
+        setTheme((prevTheme) => {
+            const nextTheme = prevTheme === "dark" ? "light" : "dark";
+            return nextTheme;
+        });
     }
 
     return (
         <form onSubmit={handleSearchCity}>
             <div className="flex gap-2">
-                <Input placeholder="Pesquisar" ref={cityNameInput} />
+                <Input placeholder="Pesquisar" ref={cityNameInput} required />
                 <Button type="submit" aria-label="Pesquisar cidade" title="Pesquisar cidade">
                     <SearchIcon size={16} />
                 </Button>
                 <Button type="button" aria-label="Buscar pela localização atual" title="Buscar pela localização atual">
                     <LocateIcon size={16} />
                 </Button>
-                <Button type="button" aria-label="Alterar tema" title="Alterar tema">
-                    <MoonIcon size={16} />
+                <Button type="button" aria-label="Alterar tema" title="Alterar tema" onClick={handleThemeChange}>
+                    {nextThemeIcon[theme]}
                 </Button>
             </div>
         </form>
