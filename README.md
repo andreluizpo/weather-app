@@ -1,73 +1,101 @@
-# React + TypeScript + Vite
+# ☀️ Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web que permite consultar informações climáticas em tempo real a partir do nome de uma cidade, exibindo dados como temperatura, sensação térmica, umidade, vento, horário local, nascer e pôr do sol.
 
-Currently, two official plugins are available:
+O projeto resolve a necessidade de obter dados climáticos de forma simples, clara e organizada, consumindo uma API externa.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Projeto online: https://weather-app-eight-steel-26.vercel.app/
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🖼️ Preview do Projeto
 
-## Expanding the ESLint configuration
+<img src="./public/images/screenshot-desktop.png" style="width:100%;max-width: 1024px">
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+📱 Mobile
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+<img src="./public/images/screenshot-mobile.png" style="width:100%;max-width: 360px">
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Funcionalidades
+
+- 🔍 Busca de clima por nome da cidade
+- 🌡️ Exibição de temperatura, sensação térmica e umidade
+- 💨 Informações de vento (velocidade)
+- 🌍 Exibição do país e cidade pesquisados
+- 🕒 Cálculo e exibição da data e hora local com base no timezone
+- ⏳ Estados de carregamento (loading)
+- ⚠️ Tratamento e exibição de erros da API
+- 🎨 Mudança dinâmica do fundo com base no horário local
+
+---
+
+## 🧠 O que eu aprendi com esse projeto
+
+Neste projeto, pude aprender e praticar:
+
+- Consumo de APIs REST (OpenWeather API)
+- Gerenciamento de estado global com Context API
+- Tipagem de dados complexos com TypeScript
+- Tratamento de estados assíncronos (loading e error)
+- Boas práticas de componentização em React
+- Conversão de timestamps e uso de timezone
+- Uso de variáveis de ambiente para proteger chaves de API
+- Organização de código com hooks e contextos customizados
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+- React
+- TypeScript
+- Context API
+- OpenWeather API
+- Vite
+- Tailwind CSS
+
+---
+
+## ▶️ Como rodar o projeto localmente
+
+### Passo a passo
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/andreluizpo/weather-app.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Acesse a pasta do projeto:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd weather-app
 ```
+
+3. Instale as dependências:
+
+```bash
+npm install
+```
+
+4. Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+4. Acesse no navegador:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por André Luiz, com dados fornecidos por [OpenWeather](https://openweathermap.org/).
+
+- LinkedIn - https://www.linkedin.com/in/andreluizpereiradeoliveira
+- GitHub - https://github.com/andreluizpo
