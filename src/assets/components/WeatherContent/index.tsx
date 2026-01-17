@@ -1,17 +1,7 @@
-import {
-    ChevronsDownUpIcon,
-    CloudRainIcon,
-    DropletsIcon,
-    MapPinIcon,
-    SunIcon,
-    SunriseIcon,
-    SunsetIcon,
-    WindIcon,
-} from "lucide-react";
+import { ChevronsDownUpIcon, CloudRainIcon, DropletsIcon, MapPinIcon, SunIcon, WindIcon } from "lucide-react";
 import { WeatherIcon } from "../WeatherIcon";
 import { useWeather } from "../../../contexts/useWeatherContext";
 import { LocalTime } from "../LocalTime";
-import { formattedTime } from "../../../utils/formattedTime";
 import { MessageContainer } from "../MessageContainer";
 import clsx from "clsx";
 import { SunTime } from "../SunTime";

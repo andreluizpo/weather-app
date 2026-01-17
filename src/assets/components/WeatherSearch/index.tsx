@@ -7,7 +7,7 @@ import { useWeather } from "../../../contexts/useWeatherContext";
 type AvailableThemes = "dark" | "light";
 
 export function WeatherSearch() {
-    const { fetchWeather, weather } = useWeather();
+    const { fetchWeather } = useWeather();
     const [theme, setTheme] = useState<AvailableThemes>(() => {
         const storageTheme = (localStorage.getItem("theme") as AvailableThemes) || "dark";
         return storageTheme;
