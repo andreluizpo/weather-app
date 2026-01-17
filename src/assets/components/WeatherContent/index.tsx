@@ -14,6 +14,7 @@ import { LocalTime } from "../LocalTime";
 import { formattedTime } from "../../../utils/formattedTime";
 import { MessageContainer } from "../MessageContainer";
 import clsx from "clsx";
+import { SunTime } from "../SunTime";
 
 export function WeatherContent() {
     const { weather, loading, error } = useWeather();
@@ -80,8 +81,11 @@ export function WeatherContent() {
                                 <SunIcon size={14} /> Nascer e Por do sol
                             </div>
                             <div className="flex items-center gap-1 font-medium">
-                                <SunriseIcon size={14} /> {formattedTime(weather.sys.sunrise)} <SunsetIcon size={14} />{" "}
-                                {formattedTime(weather.sys.sunset)}
+                                <SunTime
+                                    sunrise={weather.sys.sunrise}
+                                    sunset={weather.sys.sunset}
+                                    timezone={weather.timezone}
+                                />
                             </div>
                         </div>
                     </div>

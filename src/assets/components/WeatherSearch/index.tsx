@@ -1,4 +1,4 @@
-import { LocateIcon, MoonIcon, SearchIcon, SunIcon } from "lucide-react";
+import { MoonIcon, SearchIcon, SunIcon } from "lucide-react";
 import { Button } from "../Button";
 import { Input } from "../Input";
 import { useEffect, useRef, useState } from "react";
@@ -21,13 +21,14 @@ export function WeatherSearch() {
     const cityNameInput = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
-        console.log(weather);
-    }, [weather]);
-
-    useEffect(() => {
         document.documentElement.setAttribute("class", theme);
         localStorage.setItem("theme", theme);
     }, [theme]);
+
+    useEffect(() => {
+        const standardCity = "São Paulo";
+        fetchWeather(standardCity);
+    }, []);
 
     function handleSearchCity(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -39,7 +40,6 @@ export function WeatherSearch() {
         fetchWeather(cityName);
 
         cityNameInput.current.value = "";
-        console.log(cityName);
     }
 
     function handleThemeChange() {
@@ -55,9 +55,6 @@ export function WeatherSearch() {
                 <Input placeholder="Pesquisar" ref={cityNameInput} required />
                 <Button type="submit" aria-label="Pesquisar cidade" title="Pesquisar cidade">
                     <SearchIcon size={16} />
-                </Button>
-                <Button type="button" aria-label="Buscar pela localização atual" title="Buscar pela localização atual">
-                    <LocateIcon size={16} />
                 </Button>
                 <Button type="button" aria-label="Alterar tema" title="Alterar tema" onClick={handleThemeChange}>
                     {nextThemeIcon[theme]}
