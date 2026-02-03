@@ -3,7 +3,7 @@ export function Footer() {
         <footer className="mt-5 text-center text-[14px] text-neutral-500">
             <span>
                 © {new Date().getFullYear()} — Desenvolvido por{" "}
-                <a className="hover:underline" href="https://github.com/andreluizpo/to-do-list" target="_blank">
+                <a className="hover:underline" href="https://github.com/andreluizpo" target="_blank">
                     André Luiz
                 </a>
                 . Dados fornecidos por{" "}
