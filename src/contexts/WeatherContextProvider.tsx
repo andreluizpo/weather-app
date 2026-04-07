@@ -9,13 +9,13 @@ export function WeatherContextProvider({ children }: { children: React.ReactNode
 
     const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
-    async function fetchWeather(city: string) {
+    async function fetchWeather(lat: number, lon: number) {
         try {
             setLoading(true);
             setError(null);
 
             const response = await fetch(
-                `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=pt_br`
+                `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=pt_br`,
             );
             if (!response.ok) throw new Error("Erro ao buscar clima");
 
